@@ -306,7 +306,7 @@ export default function Home() {
       </h2>
 
       <p className="text-xl font-bold text-gray-700 mb-4">
-        ⭐ 4.9 en Google (29 reseñas)
+        ⭐ 5.0 en Google (58 reseñas)
       </p>
 
       <a 
@@ -684,6 +684,75 @@ export default function Home() {
 
       {/* Footer (extracted) */}
       <Footer phone={contactInfo.phone} />
+
+      {/* Schema - FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué servicios realiza un manitas en Gijón?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Soy Costa, manitas en Gijón. Realizo pequeñas reparaciones del hogar y trabajos de carpintería ligera, con especial atención a la restauración y mejora de madera existente. También me ocupo de instalaciones sencillas y mantenimiento doméstico puntual. No realizo reformas integrales ni obras grandes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta un manitas en Gijón?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El precio depende del tipo de trabajo y del tiempo necesario. Siempre explico el coste antes de empezar y ofrezco un presupuesto previo, con precios claros y sin sorpresas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Trabajas en toda la ciudad de Gijón?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Trabajo exclusivamente en Gijón ciudad. Esto me permite organizar mejor cada servicio y mantener un trato directo y cercano."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Haces reparaciones urgentes en Gijón?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No soy un servicio de urgencias 24 horas. Si el trabajo es pequeño y estoy disponible, intento ayudarte lo antes posible dentro de mi horario habitual."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Ofreces presupuesto sin compromiso?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Si puedes enviarme una foto y una breve explicación del trabajo, puedo orientarte y darte un presupuesto aproximado antes de confirmar la visita."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Realizas trabajos de carpintería ligera en Gijón?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Me ocupo de pequeños proyectos de restauración, reparación y mejora en madera existente, como muebles, armarios, cajones o elementos de madera que necesiten ajuste o recuperación."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué tipo de trabajos no realizas?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No realizo reformas completas, instalaciones eléctricas integrales ni trabajos estructurales. Me centro en reparaciones concretas y mejoras puntuales que puedan hacerse de forma cuidada y sin obras grandes."
+                }
+              }
+            ]
+          })
+        }}
+      />
     </div>
   )
 }

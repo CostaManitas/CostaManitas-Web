@@ -6,13 +6,37 @@ import HeroIllustration from "../../components/HeroIllustration"
 import FAQClient from "../../components/FAQClient"
 import { MessageCircle, Phone, Package, Wrench, Ruler, Zap, Hammer, Droplet, Lightbulb, ClipboardCheck } from "lucide-react"
 
+
 export const metadata = {
   title: 'Mantenimiento de propiedades en Gijón',
   description: 'Mantenimiento de propiedades en Gijón. Pequeños trabajos, revisiones y reparaciones para viviendas, negocios y otras propiedades. Trato directo y presupuesto previo.',
   alternates: {
     canonical: `${site.siteUrl}/mantenimiento-propiedades-gijon/`,
   },
+  openGraph: {
+    title: 'Mantenimiento de propiedades en Gijón | Costa Manitas',
+    description: 'Mantenimiento de propiedades en Gijón. Pequeños trabajos, revisiones y reparaciones para viviendas, negocios y otras propiedades. Trato directo y presupuesto previo.',
+    url: `${site.siteUrl}/mantenimiento-propiedades-gijon/`,
+    siteName: 'Costa Manitas Gijón',
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: site.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Costa Manitas Gijón - Mantenimiento de propiedades',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mantenimiento de propiedades en Gijón | Costa Manitas',
+    description: 'Mantenimiento de propiedades en Gijón. Pequeños trabajos, revisiones y reparaciones para viviendas, negocios y otras propiedades. Trato directo y presupuesto previo.',
+    images: [site.ogImage],
+  },
 }
+
 
 
 
@@ -331,6 +355,25 @@ Me centro en pequeños trabajos de mantenimiento, revisiones, ajustes y reparaci
             </div>
           </div>
         </section>
+
+        {/* Schema - FAQPage */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": faqItems.map((item) => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": item.answer
+                }
+              }))
+            })
+          }}
+        />
 
         {/* Section 7: FAQ */}
         <section className="py-12 md:py-20 bg-white border-b-4 border-black">

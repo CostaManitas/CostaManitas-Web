@@ -171,10 +171,9 @@ El mantenimiento periódico y las pequeñas reparaciones permiten mantener una v
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {trabajos
-                .filter(t => t.visible)
-                .slice(0, 6)
-                .map((trabajo) => (
+             {trabajos
+             .filter(t => t.visible)
+              .map((trabajo) => (
                   <div
                     key={trabajo.id}
                     className="border-4 border-black bg-gray-50 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
