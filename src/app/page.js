@@ -261,11 +261,13 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-yellow-400 border-4 border-black rotate-3 rounded-lg"></div>
               <img
-				  src="/flyer_hero.webp"
-				  alt="Costa Manitas - Servicios"
-				  width="800"
-				  height="600"
-                className="relative border-4 border-black rounded-lg shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full"/>
+                src="/flyer_hero.webp"
+                alt="Costa Manitas - Servicios"
+                width="800"
+                height="600"
+                fetchPriority="high"
+                className="relative border-4 border-black rounded-lg shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] w-full"
+              />
             </div>
           </div>
         </div>
@@ -306,7 +308,7 @@ export default function Home() {
       </h2>
 
       <p className="text-xl font-bold text-gray-700 mb-4">
-        ⭐ 5.0 en Google (58 reseñas)
+        ⭐ 5.0 en Google (67 reseñas)
       </p>
 
       <a 

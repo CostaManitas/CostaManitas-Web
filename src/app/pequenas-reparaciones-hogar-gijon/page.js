@@ -11,6 +11,21 @@ export const metadata = {
   alternates: {
     canonical: `${site.siteUrl}/pequenas-reparaciones-hogar-gijon/`,
   },
+  openGraph: {
+    title: 'Pequeñas reparaciones y mantenimiento del hogar en Gijón',
+    url: `${site.siteUrl}/pequenas-reparaciones-hogar-gijon/`,
+    siteName: site.siteName,
+    locale: 'es_ES',
+    type: 'website',
+    images: [
+      {
+        url: site.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Pequeñas reparaciones y mantenimiento del hogar en Gijón',
+      },
+    ],
+  },
 }
 
 export default function Page() {
@@ -166,36 +181,43 @@ El mantenimiento periódico y las pequeñas reparaciones permiten mantener una v
         <section className="py-12 bg-white border-b-4 border-black">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-black uppercase mb-8 relative inline-block">Trabajos reales en viviendas de Gijón
+              <h2 className="text-4xl md:text-5xl font-black uppercase mb-8 relative inline-block">
+                Trabajos reales en viviendas de Gijón
                 <span className="absolute -bottom-2 left-0 w-full h-2 bg-yellow-400"></span>
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-             {trabajos
-             .filter(t => t.visible)
-              .map((trabajo) => (
-                  <div
-                    key={trabajo.id}
-                    className="border-4 border-black bg-gray-50 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
-                  >
-                    <img
-                      src={trabajo.image}
-                      alt={trabajo.title}
-                      width="800"
-                      height="600"
-                      loading="lazy"
-                      className="w-full h-48 object-cover border-b-4 border-black"
-                    />
-                    <div className="p-4">
-                      <h3 className="font-black uppercase text-sm mb-2">
-                        {trabajo.title}
-                      </h3>
-                      <p className="font-bold text-gray-700 text-sm">
-                        {trabajo.text}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[0, 1].map((columna) => (
+                <div key={columna} className="flex flex-col gap-6">
+                  {trabajos
+                    .filter((t) => t.visible)
+                    .filter((trabajo, index) => index % 2 === columna)
+                    .map((trabajo) => (
+                      <div
+                        key={trabajo.id}
+                        className="w-full self-start border-4 border-black bg-gray-50 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+                      >
+                        <img
+                          src={trabajo.image}
+                          alt={trabajo.title}
+                          width="800"
+                          height="600"
+                          loading="lazy"
+                          className="w-full h-auto border-b-4 border-black"
+                        />
+                        <div className="p-4">
+                          <h3 className="font-black uppercase text-sm mb-2">
+                            {trabajo.title}
+                          </h3>
+                          <p className="font-bold text-gray-700 text-sm">
+                            {trabajo.text}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              ))}
             </div>
 
             <div className="text-center mt-8">

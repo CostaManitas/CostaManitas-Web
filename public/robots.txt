@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://costamanitas.com/sitemap.xml
+Sitemap: https://www.manitasengijon.es/sitemap.xml
