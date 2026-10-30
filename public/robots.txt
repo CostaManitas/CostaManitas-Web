@@ -1,4 +1,3 @@
-# robots.txt para Costa Manitas
 User-agent: *
 Allow: /
 

@@ -1,5 +1,6 @@
 import './globals.css'
 import site from "../data/site"
+import CookieConsent from "../components/CookieConsent"
 
 export const metadata = {
 	metadataBase: new URL(site.siteUrl),
@@ -139,7 +140,10 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+       {children}
+       <CookieConsent />
+      </body>
     </html>
   )
 }

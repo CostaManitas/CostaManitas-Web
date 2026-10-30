@@ -247,7 +247,8 @@ export default function Home() {
 			</h1>
               <p className="text-xl mb-6 md:mb-8 font-bold text-gray-700 text-center md:text-left">
                 Si en casa hay algo que necesita arreglo, cuenta conmigo. 
-				Soluciones prácticas, presupuesto claro y trato directo en Gijón.
+                Realizo pequeñas reparaciones del hogar en Gijón, desde ajustes y montajes hasta arreglos cotidianos que no requieren una gran reforma. 
+				Soluciones prácticas, presupuesto claro y trato directo.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a href={contactInfo.whatsappLink} target="_blank" rel="noopener noreferrer" data-testid="hero-whatsapp-btn">
