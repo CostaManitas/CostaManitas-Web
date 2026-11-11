@@ -128,6 +128,13 @@ const services = [
     description: 'Pequeñas reparaciones de fontanería, cambios de grifos, ajustes, revisiones y mantenimiento puntual de la vivienda.',
     icon: 'droplet',
     anchor: 'fontaneria-mantenimiento-hogar'
+  },
+  {
+    id: 7,
+    title: 'Pintura, restauración y acabados',
+    description: 'Pequeños trabajos de pintura, reparación de paredes, restauración de madera y protección de superficies metálicas.',
+    icon: 'paintbrush',
+    anchor: 'pintura-restauracion-acabados'
   }
 ]
 

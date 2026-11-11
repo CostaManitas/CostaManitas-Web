@@ -3,7 +3,7 @@ import Footer from "../../components/Footer"
 import site from "../../data/site"
 import trabajos from "../../data/trabajos"
 import Link from "next/link"
-import { MessageCircle, Phone, Package, Wrench, Ruler, Zap, Hammer, Droplet } from "lucide-react"
+import { MessageCircle, Phone, Package, Wrench, Ruler, Zap, Hammer, Droplet, Paintbrush } from "lucide-react"
 import HeroRandomImage from "../../components/HeroRandomImage"
 
 export const metadata = {
@@ -79,10 +79,18 @@ El objetivo es solucionar el problema de forma precisa y aprovechar el elemento 
             title: 'Fontanería y mantenimiento del hogar',
             description: `Realizo pequeños trabajos de fontanería y mantenimiento general de la vivienda que pueden resolverse sin una obra o una instalación compleja. Son intervenciones puntuales destinadas a solucionar pequeños problemas, sustituir elementos sencillos o mantener la vivienda en buen estado.
 
-Dentro de este tipo de trabajos se incluyen, por ejemplo, cambios de grifos y otros mecanismos sencillos, pequeños ajustes, revisiones y trabajos de puesta a punto. También puedo ayudarte con pequeñas tareas de mantenimiento que aparecen con el uso habitual de una vivienda y que necesitan una solución práctica.
+Entre estos trabajos se incluyen la sustitución de grifos, lavabos y muebles de baño, así como su montaje y fijación. También realizo pequeños trabajos de sellado y renovación de juntas, como el cambio de silicona en duchas, bañeras y lavabos, y el sellado de mamparas y platos de ducha. Además, puedo ayudarte con pequeños ajustes, revisiones y otras tareas de mantenimiento habituales en la vivienda.
 
 El mantenimiento periódico y las pequeñas reparaciones permiten mantener una vivienda en buenas condiciones y evitar que problemas menores terminen convirtiéndose en intervenciones más importantes. Mi trabajo está orientado precisamente a este tipo de necesidades puntuales, directamente en viviendas de Gijón.`
-          }
+},
+{
+  title: 'Pintura, restauración y acabados',
+  description: `Realizo pequeños trabajos de pintura, reparación y restauración de superficies en viviendas de Gijón. Me ocupo de reparar grietas y agujeros en paredes y techos, tapar rozaduras, arreglar desconchones y preparar las superficies antes de pintar. Son intervenciones puntuales para recuperar el buen estado de paredes, techos y otros elementos de la vivienda.
+
+También realizo trabajos de pintura de paredes, habitaciones y pasillos, retoques de pintura y renovación de superficies deterioradas. En madera, puedo encargarme del lijado, barnizado y esmaltado de puertas, marcos, ventanas y otros elementos, recuperando su aspecto y protección.
+
+Los trabajos incluyen además la preparación, protección y pintura de elementos metálicos, como puertas, barandillas y rejas, con eliminación de óxido superficial y aplicación de productos antioxidantes y esmaltes. Son pequeños trabajos de mantenimiento y renovación de acabados, sin necesidad de realizar reformas integrales ni grandes trabajos de pintura.`
+},
   ]
 
   return (
@@ -136,7 +144,19 @@ El mantenimiento periódico y las pequeñas reparaciones permiten mantener una v
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {categories.map((c, i) => (
-                <article key={i} className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all bg-white rounded-lg overflow-hidden">
+               <article
+                  key={i}
+                  id={[
+                    'montaje-adaptacion-muebles',
+                    'puertas-persianas-herrajes',
+                    'instalacion-elementos-paredes',
+                    'iluminacion-pequenas-reparaciones-electricas',
+                    'carpinteria-madera-acabados',
+                    'fontaneria-mantenimiento-hogar',
+                    'pintura-restauracion-acabados'
+                  ][i]}
+                  className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all bg-white rounded-lg overflow-hidden"
+                >
                   <div className="relative">
                     <div
                       className="w-full h-32 bg-gradient-to-br from-gray-50 to-gray-100 border-b-4 border-black flex items-center justify-center relative overflow-hidden"
@@ -150,7 +170,7 @@ El mantenimiento periódico y las pequeñas reparaciones permiten mantener una v
 
                       <div className="relative z-10 bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" style={{ transform: `rotate(${i % 2 === 0 ? '-2deg' : '2deg'})` }}>
                         {(() => {
-                          const icons = [Package, Wrench, Ruler, Zap, Hammer, Droplet]
+                          const icons = [Package, Wrench, Ruler, Zap, Hammer, Droplet, Paintbrush]
                           const Icon = icons[i % icons.length]
                           return <Icon className="h-12 w-12 stroke-[2.5px]" />
                         })()}
